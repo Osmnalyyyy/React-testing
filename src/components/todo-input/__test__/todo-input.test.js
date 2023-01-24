@@ -2,7 +2,11 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import TodoInput from "../todo-input";
 
-const MockedAddTodo = () => {};
+//alttaki mockedaddtodo sahte ve boş bir fonksiyondur
+//render(<TodoInput addTodo={MockedAddTodo} />); satırındaki test fonksiyonu istenildiği gibi çalışmadığ ıiçin ekledik
+//asıl test edilen fonksiyondaki addTodo  nun hata vermesini engelledik
+const MockedAddTodo = jest.fn(); //
+//const MockedAddTodo = ()=>{});
 
 it("should render the button as disabled if textbox contains no char", () => {
   render(<TodoInput />);
