@@ -7,14 +7,15 @@ import TodoHeader from "./components/todo-header/todo-header";
 
 const App = () => {
   return (
-      <BrowserRouter>
-        <TodoHeader title="TODO Application" />
-        <Routes>
-          <Route path="/" element={<TodosPage />} />
-          <Route path="/comments" element={<CommentsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <TodoHeader title="TODO Application" />
+      <div>learn react</div>
+      <Routes>
+        <Route path="/" element={<TodosPage />} />
+        <Route path="/comments" element={<CommentsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

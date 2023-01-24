@@ -1,14 +1,11 @@
 import React, { useCallback, useState } from "react";
 import { Container } from "reactstrap";
-import TodoHeader from "../components/todo-header/todo-header";
 import TodoInput from "../components/todo-input/todo-input";
 import TodoList from "../components/todo-list/todo-list";
 import TodoStatus from "../components/todo-status/todo-status";
-
 const TodosPage = () => {
   const [todos, setTodos] = useState([]);
-
-  const addTodo = useCallback((title) => {
+  const addTodo = (title) => {
     setTodos((prev) => [
       ...prev,
       {
@@ -17,21 +14,17 @@ const TodosPage = () => {
         completed: false,
       },
     ]);
-  });
-
-  const removeTodo = useCallback((id) => {
+  };
+  const removeTodo = (id) => {
     const newTodos = todos.filter((item) => item.id !== id);
     setTodos(newTodos);
-  });
-
+  };
   const setState = (id) => {
     const newTodos = todos.map((item) =>
       item.id === id ? { ...item, completed: !item.completed } : item
     );
-
     setTodos(newTodos);
   };
-
   return (
     <Container className="mt-5">
       <TodoInput addTodo={addTodo} />
@@ -40,5 +33,4 @@ const TodosPage = () => {
     </Container>
   );
 };
-
 export default TodosPage;
