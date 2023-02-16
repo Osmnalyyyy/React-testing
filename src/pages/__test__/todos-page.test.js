@@ -32,6 +32,7 @@ describe("comleted functionality", () => {
     const listItemEl = screen.getByText(/Hi there/i);
     userEvent.click(listItemEl);
     expect(listItemEl).toHaveClass("completed");
+    
   });
 });
 
